@@ -1,0 +1,348 @@
+newman
+
+ASK-FirstA
+
+Iteration 1/5
+
+→ /sign-in-[S]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 890B, 243ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify users role= STUDENT
+
+→ /sign-in-[T]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 898B, 95ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify user role= TEACHER
+
+→ /quiz-createquiz-[T]
+  POST http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 103ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+
+→ /updates_quiz-[T]
+  PUT http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 103ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches quizId
+
+→ /create-assigment-[T]
+  POST http://ask-qa.portnov.com/api/v1/assignment [200 OK, 1.65kB, 104ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify status, result, gradeBy before submission
+
+→ /my-assignments_list-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-assignments [200 OK, 11.53kB, 102ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /submit-assignment-[S]
+  POST http://ask-qa.portnov.com/api/v1/submit-assignment [200 OK, 11.27kB, 101ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches assigmentId
+  ✓  Verify status, result, and gradedBy after submission
+
+→ /assignment/id-[T]-graded-manually
+  PUT http://ask-qa.portnov.com/api/v1/assignment/22646 [200 OK, 411.84kB, 1250ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 40000ms
+
+→ /my-grades-check-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-grades [200 OK, 11.81kB, 107ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /quiz/quizId-[T]-delete_quiz
+  DELETE http://ask-qa.portnov.com/api/v1/quiz/17903 [200 OK, 763B, 98ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Quiz was deleted
+
+→ /assignment/groupId-[T]
+  DELETE http://ask-qa.portnov.com/api/v1/assignment/e3a796e6-7702-4a45-8a06-715558808e33 [200 OK, 769B, 91ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Assignment was deleted
+
+Iteration 2/5
+
+→ /sign-in-[S]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 890B, 92ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify users role= STUDENT
+
+→ /sign-in-[T]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 898B, 89ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify user role= TEACHER
+
+→ /quiz-createquiz-[T]
+  POST http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 109ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+
+→ /updates_quiz-[T]
+  PUT http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 94ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches quizId
+
+→ /create-assigment-[T]
+  POST http://ask-qa.portnov.com/api/v1/assignment [200 OK, 1.65kB, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify status, result, gradeBy before submission
+
+→ /my-assignments_list-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-assignments [200 OK, 11.53kB, 97ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /submit-assignment-[S]
+  POST http://ask-qa.portnov.com/api/v1/submit-assignment [200 OK, 11.27kB, 105ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches assigmentId
+  ✓  Verify status, result, and gradedBy after submission
+
+→ /assignment/id-[T]-graded-manually
+  PUT http://ask-qa.portnov.com/api/v1/assignment/22647 [200 OK, 411.84kB, 1106ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 40000ms
+
+→ /my-grades-check-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-grades [200 OK, 11.81kB, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /quiz/quizId-[T]-delete_quiz
+  DELETE http://ask-qa.portnov.com/api/v1/quiz/17904 [200 OK, 763B, 104ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Quiz was deleted
+
+→ /assignment/groupId-[T]
+  DELETE http://ask-qa.portnov.com/api/v1/assignment/aaf87724-6f57-4e9b-aeb0-2f9ba14e8bf9 [200 OK, 769B, 95ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Assignment was deleted
+
+Iteration 3/5
+
+→ /sign-in-[S]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 890B, 91ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify users role= STUDENT
+
+→ /sign-in-[T]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 898B, 90ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify user role= TEACHER
+
+→ /quiz-createquiz-[T]
+  POST http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 99ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+
+→ /updates_quiz-[T]
+  PUT http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 138ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches quizId
+
+→ /create-assigment-[T]
+  POST http://ask-qa.portnov.com/api/v1/assignment [200 OK, 1.65kB, 101ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify status, result, gradeBy before submission
+
+→ /my-assignments_list-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-assignments [200 OK, 11.53kB, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /submit-assignment-[S]
+  POST http://ask-qa.portnov.com/api/v1/submit-assignment [200 OK, 11.27kB, 102ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches assigmentId
+  ✓  Verify status, result, and gradedBy after submission
+
+→ /assignment/id-[T]-graded-manually
+  PUT http://ask-qa.portnov.com/api/v1/assignment/22648 [200 OK, 411.84kB, 1096ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 40000ms
+
+→ /my-grades-check-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-grades [200 OK, 11.81kB, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /quiz/quizId-[T]-delete_quiz
+  DELETE http://ask-qa.portnov.com/api/v1/quiz/17905 [200 OK, 763B, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Quiz was deleted
+
+→ /assignment/groupId-[T]
+  DELETE http://ask-qa.portnov.com/api/v1/assignment/f638eb44-4012-4dd2-aeeb-eb53aab679c6 [200 OK, 769B, 97ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Assignment was deleted
+
+Iteration 4/5
+
+→ /sign-in-[S]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 890B, 90ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify users role= STUDENT
+
+→ /sign-in-[T]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 898B, 91ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify user role= TEACHER
+
+→ /quiz-createquiz-[T]
+  POST http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+
+→ /updates_quiz-[T]
+  PUT http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 104ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches quizId
+
+→ /create-assigment-[T]
+  POST http://ask-qa.portnov.com/api/v1/assignment [200 OK, 1.65kB, 100ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify status, result, gradeBy before submission
+
+→ /my-assignments_list-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-assignments [200 OK, 11.53kB, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /submit-assignment-[S]
+  POST http://ask-qa.portnov.com/api/v1/submit-assignment [200 OK, 11.27kB, 99ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches assigmentId
+  ✓  Verify status, result, and gradedBy after submission
+
+→ /assignment/id-[T]-graded-manually
+  PUT http://ask-qa.portnov.com/api/v1/assignment/22649 [200 OK, 411.84kB, 1195ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 40000ms
+
+→ /my-grades-check-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-grades [200 OK, 11.81kB, 99ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /quiz/quizId-[T]-delete_quiz
+  DELETE http://ask-qa.portnov.com/api/v1/quiz/17906 [200 OK, 763B, 95ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Quiz was deleted
+
+→ /assignment/groupId-[T]
+  DELETE http://ask-qa.portnov.com/api/v1/assignment/e7eac79d-24d9-4b0e-996d-e485b55f01be [200 OK, 769B, 96ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Assignment was deleted
+
+Iteration 5/5
+
+→ /sign-in-[S]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 890B, 105ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify users role= STUDENT
+
+→ /sign-in-[T]
+  POST http://ask-qa.portnov.com/api/v1/sign-in [200 OK, 898B, 90ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify user role= TEACHER
+
+→ /quiz-createquiz-[T]
+  POST http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 98ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+
+→ /updates_quiz-[T]
+  PUT http://ask-qa.portnov.com/api/v1/quiz [200 OK, 804B, 93ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches quizId
+
+→ /create-assigment-[T]
+  POST http://ask-qa.portnov.com/api/v1/assignment [200 OK, 1.65kB, 100ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 400ms
+  ✓  Verify status, result, gradeBy before submission
+
+→ /my-assignments_list-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-assignments [200 OK, 11.53kB, 97ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /submit-assignment-[S]
+  POST http://ask-qa.portnov.com/api/v1/submit-assignment [200 OK, 11.27kB, 104ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Verify response body matches assigmentId
+  ✓  Verify status, result, and gradedBy after submission
+
+→ /assignment/id-[T]-graded-manually
+  PUT http://ask-qa.portnov.com/api/v1/assignment/22650 [200 OK, 411.84kB, 939ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 40000ms
+
+→ /my-grades-check-[S]
+  GET http://ask-qa.portnov.com/api/v1/my-grades [200 OK, 11.81kB, 92ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+
+→ /quiz/quizId-[T]-delete_quiz
+  DELETE http://ask-qa.portnov.com/api/v1/quiz/17907 [200 OK, 763B, 100ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Quiz was deleted
+
+→ /assignment/groupId-[T]
+  DELETE http://ask-qa.portnov.com/api/v1/assignment/0906beea-8fc6-42e0-a746-bc078c483834 [200 OK, 769B, 92ms]
+  ✓  Status code is 200
+  ✓  Response time is less than 500ms
+  ✓  Body matches = Assignment was deleted
+
+[90m┌─────────────────────────[39m[90m┬─────────────────────[39m[90m┬────────────────────┐[39m
+[90m│[39m                         [90m│[39m            executed [90m│[39m             failed [90m│[39m
+[90m├─────────────────────────[39m[90m┼─────────────────────[39m[90m┼────────────────────┤[39m
+[90m│[39m              iterations [90m│[39m                   5 [90m│[39m                  0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼─────────────────────[39m[90m┼────────────────────┤[39m
+[90m│[39m                requests [90m│[39m                  55 [90m│[39m                  0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼─────────────────────[39m[90m┼────────────────────┤[39m
+[90m│[39m            test-scripts [90m│[39m                  55 [90m│[39m                  0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼─────────────────────[39m[90m┼────────────────────┤[39m
+[90m│[39m      prerequest-scripts [90m│[39m                   0 [90m│[39m                  0 [90m│[39m
+[90m├─────────────────────────[39m[90m┼─────────────────────[39m[90m┼────────────────────┤[39m
+[90m│[39m              assertions [90m│[39m                 150 [90m│[39m                  0 [90m│[39m
+[90m├─────────────────────────┴─────────────────────┴────────────────────┤[39m
+[90m│[39m total run duration: 11.6s                                          [90m│[39m
+[90m├────────────────────────────────────────────────────────────────────┤[39m
+[90m│[39m total data received: 2.23MB (approx)                               [90m│[39m
+[90m├────────────────────────────────────────────────────────────────────┤[39m
+[90m│[39m average response time: 193ms [min: 89ms, max: 1250ms, s.d.: 294ms] [90m│[39m
+[90m└────────────────────────────────────────────────────────────────────┘[39m
